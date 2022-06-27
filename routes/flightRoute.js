@@ -5,9 +5,10 @@ const controller = require('../controllers/flightController');
 
 router
 .get("/", controller.getFlights)
-.post("/", controller.createFlight)
 .get("/:id", controller.getFlight)
-.put("/:id", controller.updateFlight);
+.post("/", controller.createFlight)
+.put("/:id", controller.updateFlight)
+.delete("/:id", controller.deleteFlight);
 
 
 module.exports = router;

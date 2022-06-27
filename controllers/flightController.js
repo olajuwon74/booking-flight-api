@@ -13,7 +13,7 @@ exports.getFlights = async (req, res) => {
         res.status(500).json({message:err});
         
     }
-}
+};
 
 // get single flight
 exports.getFlight = async (req, res) => {
@@ -24,12 +24,12 @@ exports.getFlight = async (req, res) => {
                 message: "Flight details found",
                 flight,
             });
-    } catch (err) {}
-}
+    } catch (error) {}
+};
 
 // update flight
 
-exports.updateFlight = async (req, res) =>{
+exports.updateFlight = async (req, res) => {
     try {
         let id = req.params.id;
         const flight = Flights.find((flight) => user.id === id);
@@ -41,11 +41,11 @@ exports.updateFlight = async (req, res) =>{
         res.status(200).json({
             message: "Flight updated",
             flight,
-        })
+        });
     } catch (err) {
         
     }
-}
+};
 // add/book flight
 exports.createFlight = async (req, res) => {
     try {
@@ -67,8 +67,20 @@ exports.createFlight = async (req, res) => {
     } catch (err) {
         res.status(500).json({message:err})
     }
-}
+};
 
 // delete flight
 
-
+exports.deleteFlight = async (req, res) => {
+    try {
+        let id = req.params.id;
+        const flight = Flights.find((flight) => user.id === id);
+        Flights.splice(Flights.indexOf(flight), 1);
+        res.status(200).json({
+            message: "Flight deleted",
+            flight,
+        });
+    } catch (error) {
+        res.status(500).json({message:err.message});
+    }
+};

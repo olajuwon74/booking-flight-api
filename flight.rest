@@ -3,7 +3,7 @@
 Get http://localhost:3000/flight HTTP/1.1
 
 ###
-Get http://localhost:3000/flight/f38f63a8-c0fe-45e5-ac30-1549548d7437 HTTP/1.1
+Get http://localhost:3000/flight/0ef33529-2694-4ca3-ae4e-4edb67350d72 HTTP/1.1
 
 ###
 POST http://localhost:3000/flight HTTP/1.1
@@ -12,6 +12,28 @@ Content-Type: application/json
 {
     "title": "flight to lagos",
     "time": "1pm",
+    "price": "45400",
+    "date": "24-06-2022"
+}
+
+###
+PUT http://localhost:3000/flight/d1cf7ba2-115a-4f71-8b75-8c0114a6ab00 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "flight to lagos",
+    "time": "1:30pm",
+    "price": "45400",
+    "date": "24-06-2022"
+}
+
+###
+DELETE  http://localhost:3000/flight/d1cf7ba2-115a-4f71-8b75-8c0114a6ab00 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "flight to lagos",
+    "time": "1:30pm",
     "price": "45400",
     "date": "24-06-2022"
 }
