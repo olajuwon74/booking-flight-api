@@ -1,4 +1,4 @@
-const Flights = require("../models/Flight");
+const {Flights} = require("../models/Flight");
 
 // get all flight
 exports.getFlights = async (req, res) => {
